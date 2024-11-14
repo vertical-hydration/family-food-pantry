@@ -11,7 +11,7 @@ export default function Layout() {
 
 
   return (
-    <SidebarProvider>
+    <SidebarProvider className="">
       <FamilySidebar />
       <SidebarInset>
         <PageHeader />
