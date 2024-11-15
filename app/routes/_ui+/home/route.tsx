@@ -1,6 +1,5 @@
-import { ActionFunctionArgs, json, LoaderFunctionArgs } from '@remix-run/node';
-import { handleAuth } from './data/auth.server';
-import { mutations } from './data/mutations.server';
+import { ActionFunctionArgs, LoaderFunctionArgs } from '@remix-run/node';
+import { handleAuth } from './data/handle-auth.server';
 import { getPageData } from './data/data-fetchers.server';
 import EventsCard from './components/events-card';
 import ReservationsCard from './components/reservations-card';

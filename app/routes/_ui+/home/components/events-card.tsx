@@ -19,7 +19,6 @@ import {
 } from "~/components/ui/table"
 import { loader } from "../route"
 import { Button } from "~/components/ui/button"
-// import { useUser } from "@clerk/remix"
 
 interface TimeSlots {
   id: string;
@@ -37,10 +36,8 @@ interface FoodOpportunity {
 }
 
 
-export default function EventsCard
-  () {
+export default function EventsCard() {
   const { openEvents } = useLoaderData<typeof loader>()
-  // const totalOpportunities = opportunities.length;
 
   const events = openEvents.map((event) => {
     return {
