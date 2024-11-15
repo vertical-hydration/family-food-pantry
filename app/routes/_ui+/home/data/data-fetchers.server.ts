@@ -1,7 +1,7 @@
 
 
 
-const getEvents= async()=>{
+const getEvents= async({userId}:{userId:string})=>{
 
   const testEvent = {
     name: "Test Pickup Event",
@@ -14,7 +14,7 @@ const getEvents= async()=>{
 }
 
 
-const getReservations = async()=>{
+const getReservations = async({userId}:{userId:string})=>{
 
   const testReservation ={
     id: "test-1",
@@ -29,9 +29,9 @@ const getReservations = async()=>{
 }
 
 
-const getPageData = async () => {
-  const openEvents = await getEvents();
-  const reservations = await getReservations();
+const getPageData = async ({userId}:{userId:string}) => {
+  const openEvents = await getEvents({userId});
+  const reservations = await getReservations({userId});
 
   return { openEvents, reservations };
 };
