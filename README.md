@@ -1,40 +1,14 @@
-# Welcome to Remix!
+# Welcome to the Family Food Pantry
+This app is part of the vertical hydration collection of open source apps for nonprofits looking to deliver better services. All the code is open source and you are encouraged to use it as a template for your own nonprofit.
 
-- 📖 [Remix docs](https://remix.run/docs)
+## Documentation
+This is part of the Vertical Hydration collection of apps. A documentation website will be added soon. 
+
+- 📖 [Remix](https://remix.run/docs)
 
 ## Development
+I am documenting my development journey on YouTube.
 
-Run the dev server:
 
-```shellscript
-npm run dev
-```
 
-## Deployment
 
-First, build your app for production:
-
-```sh
-npm run build
-```
-
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-- `build/server`
-- `build/client`
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
