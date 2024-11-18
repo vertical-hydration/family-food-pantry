@@ -8,7 +8,6 @@ import {
   CardHeader,
   CardTitle,
 } from "~/components/ui/card"
-
 import {
   Table,
   TableBody,
@@ -20,20 +19,6 @@ import {
 import { loader } from "../route"
 import { Button } from "~/components/ui/button"
 
-interface TimeSlots {
-  id: string;
-  time: string;
-}
-interface FoodOpportunity {
-  id: string;
-  name: string;
-  status: string;
-  code: string;
-  totalSales: number;
-  date: string;
-  applied: boolean;
-  timeSlots: TimeSlots[];
-}
 
 
 export default function EventsCard() {
