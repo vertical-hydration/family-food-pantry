@@ -5,8 +5,8 @@ import EventsCard from './components/events-card';
 import ReservationsCard from './components/reservations-card';
 
 export const loader = async (args: LoaderFunctionArgs) => {
-  await handleAuth(args);
-  const pageData = await getPageData();
+  const { userId } = await handleAuth(args);
+  const pageData = await getPageData({ userId });
   return { ...pageData };
 };
 
