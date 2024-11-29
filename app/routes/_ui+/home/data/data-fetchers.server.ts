@@ -3,20 +3,10 @@ import { foodPantryDb } from "~/services/databases/food-pantry-db.server"
 
 
 
-const getEvents= async({ userId }: { userId:string })=>{
+const getEvents= async()=>{
   const eventDocs = await foodPantryDb
   .events
   .listByStages({ stages: ["open-for-pickups", "open-for-requests"]});
-
-
-
-  // const testEvent = {
-  //   name: "Test Pickup Event",
-  //   id: "test-id",
-  //   eventDate: new Date(),
-  // }
-
-  // return [testEvent]
 
   return eventDocs.map((doc)=>{
     return {
@@ -69,7 +59,7 @@ const getReservations = async({
 
 
 const getPageData = async ({ userId }:{ userId:string }) => {
-  const eventDocs = await getEvents({ userId });
+  const eventDocs = await getEvents();
   const eventIds = eventDocs.map((doc)=> doc.id)
 
   const reservationDocs = await getReservations({ userId, eventIds });
@@ -116,5 +106,13 @@ const getPageData = async ({ userId }:{ userId:string }) => {
 
   return { openEvents, reservations };
 };
+
+
+const time_slot = 1700
+// This is converted to 5:00 PM
+
+
+
+
 
 export { getPageData };
