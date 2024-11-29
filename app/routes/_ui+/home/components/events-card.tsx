@@ -1,4 +1,4 @@
-import { useLoaderData, Link } from "@remix-run/react"
+import { useLoaderData, Link } from "react-router";
 import { Badge } from "~/components/ui/badge"
 import {
   Card,

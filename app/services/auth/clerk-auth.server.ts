@@ -1,4 +1,4 @@
-import { LoaderFunctionArgs } from "@remix-run/node";
+import { LoaderFunctionArgs } from "react-router";
 
 const requireAuth = async (args: LoaderFunctionArgs)=>{
   const userId = "bROxxo3adedzFYFaOy7t"

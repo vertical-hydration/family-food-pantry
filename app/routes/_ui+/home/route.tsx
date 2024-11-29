@@ -1,4 +1,4 @@
-import { ActionFunctionArgs, LoaderFunctionArgs } from '@remix-run/node';
+import { ActionFunctionArgs, LoaderFunctionArgs } from 'react-router';
 import { handleAuth } from './data/handle-auth.server';
 import { getPageData } from './data/data-fetchers.server';
 import EventsCard from './components/events-card';
