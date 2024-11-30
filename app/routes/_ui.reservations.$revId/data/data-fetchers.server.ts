@@ -1,4 +1,4 @@
-import { redirect } from "react-router";
+import { redirect } from "@remix-run/node";
 import { convertTo12Hour } from "~/lib/utils";
 import { foodPantryDb } from "~/services/databases/food-pantry-db.server";
 

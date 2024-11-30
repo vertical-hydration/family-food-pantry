@@ -1,4 +1,4 @@
-import { redirect, LoaderFunctionArgs } from "react-router";
+import { redirect, LoaderFunctionArgs } from "@remix-run/node";
 import { requireAuth } from "~/services/auth/clerk-auth.server";
 
 export const handleAuth = async (args: LoaderFunctionArgs) => {

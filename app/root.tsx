@@ -37,7 +37,7 @@ export const loader = async (args: LoaderFunctionArgs) => rootAuthLoader(args);
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => [
 
-  { title: data?.clientEnv.title },
+  { title: "Food Pantry " },
 ];
 
 

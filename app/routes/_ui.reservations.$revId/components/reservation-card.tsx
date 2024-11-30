@@ -1,7 +1,6 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "~/components/ui/card";
-import { Link, useLoaderData } from "react-router";
+import { Link, useLoaderData } from "@remix-run/react";
 import { loader } from "../route";
-import { Button } from "~/components/ui/button";
 
 export default function ReservationCard() {
   const { reservation, language, event } = useLoaderData<typeof loader>();
