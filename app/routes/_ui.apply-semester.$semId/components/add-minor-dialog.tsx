@@ -1,4 +1,4 @@
-import { useFetcher, useLoaderData } from "react-router";
+import { useFetcher, useLoaderData } from "@remix-run/react";
 import { Button } from "~/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "~/components/ui/dialog";
 import { Input } from "~/components/ui/input";
@@ -15,7 +15,7 @@ export function AddMinorDialog() {
   const [open, setOpen] = useState(false);
   const [form, fields] = useForm({
     // Sync the result of last submission
-    lastResult: fetcher.data,
+    // lastResult: fetcher.data,
 
     // Reuse the validation logic on the client
     onValidate({ formData }) {
@@ -31,6 +31,7 @@ export function AddMinorDialog() {
   })
 
   const isFetching = fetcher.state !== "idle";
+  // @ts-expect-error  status will be defined
   const success = fetcher.data?.status === "success" ? true : false;
 
   useEffect(() => {

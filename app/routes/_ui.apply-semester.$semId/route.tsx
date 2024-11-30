@@ -1,26 +1,26 @@
-import { ActionFunctionArgs, LoaderFunctionArgs, useLoaderData } from 'react-router';
+import {
+  useLoaderData
+} from '@remix-run/react';
 import { handleAuth } from './data/auth.server';
 import { mutations } from './data/mutations.server';
 import { getPageData } from './data/data-fetchers.server';
-import AddressCheckCard from './components/address-check-card';
-import StudentCheckCard from './components/student-check-card';
 import SubmitCard from './components/submit-card';
-import type { Route } from './+types/route';
 import { AddressFormCard } from './components/address-form-card';
 import { StudentsCard } from './components/student-card';
 import AdultsCard from './components/adults-card';
 import MinorsCard from './components/minor-card';
+import { ActionFunctionArgs, LoaderFunctionArgs } from '@remix-run/node';
 
-export const loader = async (args: Route.LoaderArgs) => {
+export const loader = async (args: LoaderFunctionArgs) => {
   const { userId, email } = await handleAuth(args);
   const data = await getPageData({ userId, email });
   return { ...data };
 };
 
-export const action = async (args: Route.ActionArgs) => {
+export const action = async (args: ActionFunctionArgs) => {
   const { userId, email, fname, lname, phone } = await handleAuth(args);
 
-  const semesterId = args.params.semId
+  const semesterId = args.params.semId as string;
 
   const primaryContact = {
     fname,

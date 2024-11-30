@@ -1,19 +1,18 @@
 import { handleAuth } from './data/auth.server';
 import { mutations } from './data/mutations.server';
 import { getPageData } from './data/data-fetchers.server';
-import { Route } from './+types/route';
 import EventSignupCard from './components/event-signup-card';
+import { ActionFunctionArgs, LoaderFunctionArgs } from '@remix-run/node';
 
-export const loader = async (args: Route.LoaderArgs) => {
+export const loader = async (args: LoaderFunctionArgs) => {
   const { userId } = await handleAuth(args);
-  const eventId = args.params.eventId;
-  console.log("eventId", eventId);
+  const eventId = args.params.eventId as string;
 
   const data = await getPageData({ eventId });
   return { ...data };
 };
 
-export const action = async (args: Route.ActionArgs) => {
+export const action = async (args: ActionFunctionArgs) => {
   const clerkUser = await handleAuth(args);
   const formData = await args.request.formData();
 

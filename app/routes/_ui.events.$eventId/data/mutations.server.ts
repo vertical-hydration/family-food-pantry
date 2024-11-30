@@ -1,4 +1,4 @@
-import { data, redirect } from "react-router";
+import { data, redirect } from "@remix-run/node";
 import { foodPantryDb } from "~/services/databases/food-pantry-db.server";
 import { RequestReservationSchema } from "./schemas";
 import { parseWithZod } from "@conform-to/zod";

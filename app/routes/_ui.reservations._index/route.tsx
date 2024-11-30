@@ -1,4 +1,10 @@
-import { ActionFunctionArgs, LoaderFunctionArgs, useLoaderData } from 'react-router';
+import {
+  ActionFunctionArgs,
+  LoaderFunctionArgs,
+} from '@remix-run/node';
+import {
+  useLoaderData
+} from '@remix-run/react';
 import { handleAuth } from './data/auth.server';
 import { mutations } from './data/mutations.server';
 import { getPageData } from './data/data-fetchers.server';

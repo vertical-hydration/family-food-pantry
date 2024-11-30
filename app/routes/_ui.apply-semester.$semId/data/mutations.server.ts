@@ -1,6 +1,6 @@
 import { parseWithZod } from "@conform-to/zod";
 import { AddMinorSchema, AddressSchema, AddStudentSchema, RemoveMinorSchema, RemoveStudentSchema, SetAdultsSchema } from "./schemas";
-import { data, redirect } from "react-router";
+import { data, redirect } from "@remix-run/react";
 import { foodPantryDb } from "~/services/databases/food-pantry-db.server";
 import { PrimaryContact } from "~/lib/business-logic/common-types";
 
@@ -172,7 +172,7 @@ const submitApplication = async ({
   const success = addressCheck.success && studentsCheck.success;
 
   if (!success) {
-    return { success, message:"failed check"};
+    return { success, message:"failed check", status: "error" };
   }
 
   

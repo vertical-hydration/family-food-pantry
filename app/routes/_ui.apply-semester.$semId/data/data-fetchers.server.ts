@@ -1,4 +1,3 @@
-import { redirect } from "react-router";
 import { getActiveSemester } from "~/lib/business-logic/active-semester.server";
 import { foodPantryDb } from "~/services/databases/food-pantry-db.server";
 

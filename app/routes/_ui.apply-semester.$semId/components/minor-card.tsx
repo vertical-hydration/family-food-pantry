@@ -1,4 +1,4 @@
-import { Link, useFetcher, useLoaderData } from "react-router";
+import { Link, useFetcher, useLoaderData } from "@remix-run/react";
 import {
   Card,
   CardContent,
@@ -16,7 +16,7 @@ import { AddMinorDialog } from "./add-minor-dialog";
 
 
 export default function MinorsCard() {
-  const { language } = useLoaderData();
+  const { language } = useLoaderData<typeof loader>();
 
   const english = {
     title: "Minors not enrolled in school",

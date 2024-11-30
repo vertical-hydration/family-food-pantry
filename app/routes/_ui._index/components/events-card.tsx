@@ -1,4 +1,3 @@
-import { useLoaderData, Link } from "react-router";
 import { Badge } from "~/components/ui/badge"
 import {
   Card,
@@ -18,6 +17,7 @@ import {
 } from "~/components/ui/table"
 import { loader } from "../route"
 import { Button } from "~/components/ui/button"
+import { Link, useLoaderData } from "@remix-run/react"
 
 
 

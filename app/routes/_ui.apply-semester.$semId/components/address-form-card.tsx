@@ -1,13 +1,11 @@
 
-import { Form, useActionData, useLoaderData, useNavigation, useRouteLoaderData } from "react-router"
+import { Form, useActionData, useLoaderData, useNavigation, } from "@remix-run/react"
 import { Button } from "~/components/ui/button"
 import { Input } from "~/components/ui/input"
 import { Label } from "~/components/ui/label"
 import { action, loader } from "../route"
 
 import { getFormProps, getInputProps, useForm } from "@conform-to/react"
-import { parseWithZod } from "@conform-to/zod"
-import { AddressSchema } from "../data/schemas"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "~/components/ui/card";
 import { ValidationMessage } from "~/components/standard/validation-message"
 
@@ -24,7 +22,7 @@ export function AddressFormCard() {
 
   const [form, fields] = useForm({
     // Sync the result of last submission
-    lastResult: actionData,
+    // lastResult: actionData,
 
     // Reuse the validation logic on the client
     // onValidate({ formData }) {

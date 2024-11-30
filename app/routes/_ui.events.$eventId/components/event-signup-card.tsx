@@ -4,7 +4,7 @@ import {
   useLoaderData,
   useNavigation,
   Link,
-} from "react-router";
+} from "@remix-run/react";
 import {
   Card,
   CardContent,

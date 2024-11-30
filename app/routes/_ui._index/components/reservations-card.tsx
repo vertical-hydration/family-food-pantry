@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "react-router";
+import { Link, useLoaderData } from "@remix-run/react";
 import { loader } from "../route"
 import {
   Card,

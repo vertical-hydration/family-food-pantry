@@ -1,6 +1,5 @@
 import { ChevronRightIcon } from "lucide-react";
-import { Link, useLoaderData } from "react-router";
-import type { Route } from "../+types/route"
+import { Link, useLoaderData } from "@remix-run/react";
 import { loader } from "../route";
 
 
