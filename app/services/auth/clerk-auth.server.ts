@@ -67,7 +67,7 @@ const requireAuth = async (args:LoaderFunctionArgs)=>{
   } = await getClerkAuth(args);
 
   if(!userId){
-    throw redirect(SIGN_IN_PATH)
+    throw redirect( `/${SIGN_IN_PATH}` )
   }
 
 

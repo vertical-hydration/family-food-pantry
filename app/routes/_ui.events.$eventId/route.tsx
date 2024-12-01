@@ -5,11 +5,11 @@ import EventSignupCard from './components/event-signup-card';
 import { ActionFunctionArgs, LoaderFunctionArgs } from '@remix-run/node';
 
 export const loader = async (args: LoaderFunctionArgs) => {
-  const { userId } = await handleAuth(args);
+  const clerkUser = await handleAuth(args);
   const eventId = args.params.eventId as string;
 
   const data = await getPageData({ eventId });
-  return { ...data };
+  return { ...data, clerkUser };
 };
 
 export const action = async (args: ActionFunctionArgs) => {

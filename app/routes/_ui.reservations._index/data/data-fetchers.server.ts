@@ -23,6 +23,10 @@ const getEventDocsForReservations = async ({
 }) => {
   const eventsCollection = foodPantryDb.events.collection;
 
+  if(eventIdArray.length < 1){
+    return [];
+  }
+
   const querySnapshot = await eventsCollection
     .where(FieldPath.documentId(), "in", eventIdArray)
     .get();

@@ -32,14 +32,14 @@ import { Button } from "~/components/ui/button";
 
 
 export default function EventSignupCard() {
-  const { event } = useLoaderData<typeof loader>();
+  const { event, clerkUser } = useLoaderData<typeof loader>();
   const actionData = useActionData<typeof action>();
   const [slot, setSlot] = useState("");
   const navigation = useNavigation();
   const isSubmitting = navigation.state !== "idle";
 
   const [form, fields] = useForm({
-    lastResult: actionData,
+    lastResult: actionData?.data,
     onValidate({ formData }) {
       return parseWithZod(formData, { schema: RequestReservationSchema });
     }
@@ -70,6 +70,46 @@ export default function EventSignupCard() {
       </CardHeader>
       <Form method="post" id={form.id} onSubmit={form.onSubmit}>
         <CardContent>
+          <dl className="divide-y divide-gray-100">
+            <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+              <dt className="text-sm/6 font-medium text-gray-900">Full name</dt>
+              <dd
+                className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0"
+              >
+                {`${clerkUser.fname} ${clerkUser.lname}`}
+              </dd>
+            </div>
+            <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+              <dt
+                className="text-sm/6 font-medium text-gray-900"
+              >
+                Application for
+              </dt>
+              <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">
+                {event.name}
+              </dd>
+            </div>
+            <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+              <dt className="text-sm/6 font-medium text-gray-900">Email address</dt>
+              <dd
+                className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0"
+              >
+                {clerkUser.email}
+              </dd>
+            </div>
+            <div
+              className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0"
+            >
+              <dt className="text-sm/6 font-medium text-gray-900">
+                Phone
+              </dt>
+              <dd
+                className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0"
+              >
+                {clerkUser.phone}
+              </dd>
+            </div>
+          </dl>
           <input type="hidden" name="intent" value="request-reservation" />
           <input type="hidden" name="eventId" value={event.id} />
           <input type="hidden" name="semesterId" value={event.semesterId} />
@@ -83,6 +123,9 @@ export default function EventSignupCard() {
               value={slot}
               readOnly
             />
+            <p className="text-muted-foreground">
+              Please Select your time slot
+            </p>
             <Select value={slot} onValueChange={setSlot}>
               <SelectTrigger className="w-[200px]">
                 <SelectValue placeholder={lang.placeholder} />

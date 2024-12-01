@@ -11,11 +11,12 @@ import {
   SidebarMenuItem
 } from "~/components/ui/sidebar"
 import { Button } from "../ui/button"
+import { UserButton } from "@clerk/remix"
 
 const items = [
   {
     title: "Home",
-    url: "/home",
+    url: "/",
     icon: Home,
   },
   {
@@ -52,6 +53,7 @@ export function FamilySidebar() {
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
+        <UserButton showName />
       </SidebarFooter>
     </Sidebar>
   )

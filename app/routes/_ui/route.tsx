@@ -1,4 +1,6 @@
+import { UserButton } from "@clerk/remix";
 import { Outlet } from "@remix-run/react";
+import { User } from "lucide-react";
 import { FamilySidebar } from "~/components/standard/family-sidebar";
 import { Separator } from "~/components/ui/separator";
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "~/components/ui/sidebar";
@@ -31,6 +33,8 @@ function PageHeader() {
       <h3 className="text-lg font-semibold">
         Food Pantry
       </h3>
+      <Separator orientation="vertical" className="mr-2 h-4" />
+      <UserButton showName />
     </header>
   )
 }
