@@ -1,6 +1,5 @@
 import { UserButton } from "@clerk/remix";
 import { Outlet } from "@remix-run/react";
-import { User } from "lucide-react";
 import { FamilySidebar } from "~/components/standard/family-sidebar";
 import { Separator } from "~/components/ui/separator";
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "~/components/ui/sidebar";
