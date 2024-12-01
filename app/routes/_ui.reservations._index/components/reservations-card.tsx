@@ -69,7 +69,9 @@ export default function ReservationsCard() {
 
 
   return (
-    <div className="mx-auto max-w-7xl px-0 md:px-6 lg:px-8 ">
+    <div
+      className=" max-w-7xl py-2 px-0 md:px-6 md:py-6 lg:py-8 lg:px-8 "
+    >
       {/* Content goes here */}
 
       <Card className={""}>
@@ -79,7 +81,7 @@ export default function ReservationsCard() {
             Here you can see all active and pending reservations.
           </CardDescription>
         </CardHeader>
-        <CardContent className="p-0" >
+        <CardContent className="p-2 md:p-8" >
           <ReservationsList />
           {/* <DataTable columns={reservationColumns} data={reservations} /> */}
           {/* <pre>{JSON.stringify(events.reservations, null, 2)}</pre> */}

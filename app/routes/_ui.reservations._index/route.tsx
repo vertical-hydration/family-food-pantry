@@ -27,9 +27,7 @@ export default function Route() {
   return (
     <>
       <ReservationsCard />
-      <pre>
-        {JSON.stringify(loaderData, null, 2)}
-      </pre>
+
     </>
   )
 }

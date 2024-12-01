@@ -9,13 +9,10 @@ const getPageData = async ({
   userId: string;
   reservationId: string;
 }) => {
-  const userProfileDoc = await foodPantryDb.users.read({ id: userId });
 
-  if (!userProfileDoc) {
-    throw redirect("/language");
-  }
 
-  const language = userProfileDoc.language;
+
+  const language = "en";
 
   const reservationDoc = await foodPantryDb.reservations.read(reservationId);
   if (!reservationDoc) {

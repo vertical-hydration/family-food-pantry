@@ -5,7 +5,7 @@ import { loader } from "../route";
 export default function ReservationCard() {
   const { reservation, language, event } = useLoaderData<typeof loader>();
 
-  const eventDate = event.eventDate.toLocaleDateString();
+  const eventDate = new Date(event.eventDate).toLocaleDateString();
 
   const english = {
     title: `Reservation for ${event.name} `,
@@ -45,9 +45,7 @@ export default function ReservationCard() {
             Time Slot: {reservation.time_slot}
           </p>
         </div>
-        <pre>
-          {JSON.stringify(event, null, 2)}
-        </pre>
+
       </CardContent>
       <CardFooter className="flex flex-col justify-between gap-6 md:flex-row md:gap-8 ">
 

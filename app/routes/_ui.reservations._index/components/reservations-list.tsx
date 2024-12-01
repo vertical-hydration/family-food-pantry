@@ -1,9 +1,22 @@
 import { Link, useLoaderData } from "@remix-run/react"
 import { loader } from "../route"
-import { ChevronRightIcon } from "lucide-react"
+import { ChevronRightIcon, ListChecksIcon } from "lucide-react"
 
 export default function ReservationsList() {
   const { reservations } = useLoaderData<typeof loader>()
+
+  if (reservations.length === 0) {
+    return (
+      <div
+        className="relative block w-full rounded-lg border-2 border-dashed border-gray-300 p-12 text-center"
+      >
+        <ListChecksIcon className="mx-auto h-12 w-12 text-gray-400" />
+        <span className="mt-2 block text-sm font-semibold text-gray-900">
+          No Reservations
+
+        </span>
+      </div>)
+  }
 
   return (
     <ul
