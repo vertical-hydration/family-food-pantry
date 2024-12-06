@@ -156,7 +156,7 @@ export default function EventSignupCard() {
 
           </Button>
 
-          <Link to="/home" className="w-full md:w-auto">
+          <Link to="/" className="w-full md:w-auto">
             <Button variant={"secondary"} className="w-full">
               {lang.cancel}
             </Button>

@@ -16,7 +16,7 @@ const getPageData = async ({
 
   const reservationDoc = await foodPantryDb.reservations.read(reservationId);
   if (!reservationDoc) {
-    throw redirect("/home");
+    throw redirect("/");
   }
 
   const docTime = reservationDoc.time.toString();
@@ -37,12 +37,12 @@ const getPageData = async ({
   const reservationUserId = reservationDoc.userId;
 
   if (reservationUserId !== userId) {
-    throw redirect("/home");
+    throw redirect("/");
   }
   const eventDoc = await foodPantryDb.events.read({ eventId: reservationDoc.eventId });
 
   if (!eventDoc) {
-    throw redirect("/home");
+    throw redirect("/");
   }
 
   return { language, reservation, event: eventDoc };
