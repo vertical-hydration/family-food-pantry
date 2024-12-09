@@ -17,12 +17,19 @@ const getPageData = async ({
     throw redirect("/");
   }
 
-  const timeSlots = [
-    { id: "1600", label: "4:00 PM" },
-    { id: "1630", label: "4:30 PM" },
-    { id: "1700", label: "5:00 PM" },
-    { id: "1730", label: "5:30 PM" },
-  ];
+  const docTimeSlots = eventDoc.timeSlots;
+
+    // Turn timeSlots into an array of objects
+  const timeSlots = Object.entries(docTimeSlots)
+  .map(([key, value]) => ({id:key, label:value}))
+  .sort((a,b)=> Number(a.id) - Number(b.id))
+
+  // const timeSlots = [
+  //   { id: "1600", label: "4:00 PM" },
+  //   { id: "1630", label: "4:30 PM" },
+  //   { id: "1700", label: "5:00 PM" },
+  //   { id: "1730", label: "5:30 PM" },
+  // ];
 
   const event ={
     id: eventDoc.id,
